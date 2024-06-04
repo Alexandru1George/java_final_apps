@@ -1,0 +1,131 @@
+<mat-drawer-container class="drawer-container" autosize>
+  <mat-drawer #drawer class="drawer-sidenav" mode="side">
+
+    <div class="div-logo">
+      <img class="img-logo"
+           [src]="appConfig.getAppLogo()"/>
+    </div>
+    <mat-card class="card-menu-button">
+      <mat-card-content>
+        <p>{{ appConfig.getAppOwner() }}</p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="card-menu-button" *ngIf="isUserAdmin()" (click)="onDashboard()">
+      <mat-card-content>
+        <p>Dashboard</p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="card-menu-button" (click)="onLogOut()">
+      <mat-card-content>
+        <p>Logout</p>
+      </mat-card-content>
+    </mat-card>
+  </mat-drawer>
+
+  <div class="drawer-sidenav-content">
+    <mat-toolbar color="primary">
+      <button mat-icon-button class="example-icon" (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>{{ appConfig.getAppName() }}</span>
+      <span class="example-spacer"></span>
+      <app-cart-button></app-cart-button>
+    </mat-toolbar>
+
+    <img class="img-banner"
+         src="https://motosuport.ro/wp-content/uploads/2019/09/MOTOMUS-Cluj-Napoca-Large-2.jpg"/>
+    <img class="img-banner"
+         src="https://motorxpert.ro/wp-content/uploads/2021/05/moto-e-motion-bucuresti-macna-combinezon-vlad-neaga-suzuki.jpg"/>
+    <img class="img-banner"
+         src="https://motorxpert.ro/wp-content/uploads/2023/11/Yamaha-Scooter-Day-foto-Adrian-Cobzasu-12-680x580.jpg"/>
+
+    <mat-card class="card-about-us">
+      <mat-card-title class="title-about-us">Welcome to {{ appConfig.getAppName() }}</mat-card-title>
+      <mat-card-content>
+
+        <div class="div-text">
+          <p>
+            Motocicletele, aceste vehicule pe două roți care combină puterea și libertatea, au o istorie fascinantă care
+            se întinde pe mai bine de un secol. De la primele prototipuri rudimentare la modelele moderne avansate,
+            evoluția motocicletelor reflectă progresul tehnologic și schimbările culturale ale societății.
+
+            Primele Invenții (1860-1900)
+            Povestea motocicletelor începe la mijlocul secolului al XIX-lea. În 1867, inventatorul francez Pierre
+            Michaux și fiul său Ernest au montat un mic motor cu aburi pe un bicicletă, creând astfel primul "velociped"
+            cu motor. În 1885, germanul Gottlieb Daimler a construit ceea ce este considerat prima motocicletă
+            adevărată, numită "Reitwagen" sau "mașină de călărie". Aceasta avea un motor pe benzină și roți de lemn,
+            marcând o piatră de hotar importantă în dezvoltarea motocicletelor.
+            <br><br>
+            Explorați pasiunea pentru motociclete din confortul casei tale, doar la Motorcycle Agency Online! Suntem dedicați să
+            oferim o experiență de cumpărare simplă și plăcută, aducându-vă o gamă variată de produse de înaltă
+            calitate, toate la un clic distanță.
+
+            Descoperă Oferta Noastră
+            1. Motociclete
+
+            Noi: Gama noastră include modele sport, touring, cruiser, adventure și scutere de la cele mai renumite
+            mărci. Indiferent de stilul tău de condus, avem motocicleta perfectă pentru tine.
+            Second-hand: Toate motocicletele second-hand sunt verificate și certificate, asigurându-se că fiecare
+            cumpărare este una sigură și de încredere.
+
+            2. Echipamente și Accesorii
+
+            Echipamente de protecție: Căști, jachete, pantaloni, mănuși și cizme - tot ce ai nevoie pentru a te proteja
+            și a te simți confortabil pe drum.
+            Accesorii: De la top case-uri și genți laterale la suporturi GPS, parbrize și sisteme audio, avem tot ce îți
+            trebuie pentru a-ți personaliza motocicleta.
+
+            3. Piese și Consumabile
+
+            Piese de schimb: Motoare și componente, transmisie, suspensie și frâne, sistem electric - găsește toate
+            piesele necesare pentru întreținerea motocicletei tale.
+            Consumabile: Uleiuri, filtre, bujii, anvelope și multe altele pentru a-ți menține motocicleta în stare
+            perfectă.
+          </p>
+          <img class="img-section"
+               src="https://dealer.moto24.ro/wp-content/uploads/2022/01/husqvarna-te-150i-2022-800x800.jpg"/>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="card-about-us">
+      <mat-card-title class="title-about-us">Impeccable Service</mat-card-title>
+      <mat-card-content>
+        <div class="div-text">
+          <img class="img-section" style="margin-left: 0px !important; margin-right: 16px"
+               src="https://motosuport.ro/wp-content/uploads/2019/09/IMG_20190905_113618-Large.jpg">
+
+          <p>
+            Seamless Shopping Experience: Say goodbye to hassle-filled shopping experiences. Our user-friendly website
+            is designed to make your online shopping journey smooth and enjoyable. Easily browse, search, and filter
+            through our vast selection, and complete your purchase with just a few clicks.
+
+            Secure Payment Options: Your security is our top priority. That's why we offer a range of secure payment
+            options to choose from, including credit/debit cards, PayPal, and more. Rest assured that your personal and
+            financial information is safe with us.
+            <br><br>
+            Fast and Reliable Shipping: We understand that you're eager to receive your order. That's why we partner
+            with trusted shipping carriers to ensure prompt and reliable delivery to your doorstep. Track your package
+            every step of the way and enjoy speedy shipping times.
+
+            Dedicated Customer Support: Have a question or need assistance? Our friendly customer support team is here
+            to help. Reach out to us via email, phone, or live chat, and we'll promptly address your concerns and
+            provide personalized assistance.
+
+            <br><br>
+            Start Shopping Now: Dive into our diverse collection and experience the convenience of online shopping like
+            never before. Whether you're treating yourself or searching for the perfect
+            gift, {{ appConfig.getAppName() }}
+            is
+            your ultimate destination for all things fabulous. Happy shopping!
+          </p>
+        </div>
+
+      </mat-card-content>
+    </mat-card>
+
+    <app-list-products [isAdmin]="false"></app-list-products>
+  </div>
+
+</mat-drawer-container>
+
